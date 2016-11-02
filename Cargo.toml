@@ -1,0 +1,14 @@
+[package]
+name = "vonoroi"
+version = "0.1.0"
+authors = ["Ty Overby <ty@pre-alpha.com>"]
+
+[[bin]]
+name = "vonoroi"
+path = "./src/main.rs"
+
+[dependencies]
+rand = "0.3.14"
+
+[dependencies.lux]
+path = "../lux"

@@ -102,11 +102,11 @@ fn main() {
 
     let mut distance_function = euclidian as fn(f32, f32, f32, f32) -> f32;
     let mut chooser = min_dist as fn(&mut Option<f32>, f32) -> bool;
+    let mut dirty = true;
 
     while window.is_open() {
         let mut frame = window.frame();
 
-        let mut dirty = false;
 
         if window.is_key_pressed('1') {
             distance_function = euclidian;
@@ -145,6 +145,7 @@ fn main() {
                 }
             }
 
+
             frame.draw(Pixels{
                 pixels: &buffer,
                 .. Default::default()
@@ -154,6 +155,7 @@ fn main() {
                 pixels: &points,
                 .. Default::default()
             }).unwrap();
+            dirty = false;
         }
     }
 }
